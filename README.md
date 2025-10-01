@@ -1,4 +1,4 @@
-# Term-Project
+# Borrowing and returning books in the library
 
 A command-line based **Borrowing and returning books in the library** written in Python.  
 It allows managing books, members, and borrow/return transactions, storing data in binary files (`.dat`).
