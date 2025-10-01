@@ -249,18 +249,22 @@ def delete_book():
     loans = load_loans()
     bid = input_int("Enter book_id to delete: ")
 
-    active_loans = [l for l in loans if l["book_id"]==bid and l["status"]==0]
+    active_loans = [l for l in loans if l["book_id"] == bid and l["status"] == 0]
     if active_loans:
         print("Cannot delete this book. It is currently borrowed by someone.")
         return
 
-    found=False
-    for i,b in enumerate(books):
-        if b["book_id"]==bid:
-            b["status"]=0   # mark inactive
-            books[i]=b
-            found=True
+    found = False
+    for i, b in enumerate(books):
+        if b["book_id"] == bid:
+            if b["status"] == 0:
+                print("This book has already been deleted (Inactive). Cannot delete again.")
+                return
+            b["status"] = 0   # mark inactive
+            books[i] = b
+            found = True
             break
+
     if found:
         save_books(books)
         print("Book deleted (status set to Inactive).")
