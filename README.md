@@ -1,6 +1,6 @@
-# Borrowing and returning books in the library
+# Borrow and return books in the library
 
-A command-line based **Borrowing and returning books in the library** written in Python.  
+A command-line based **Borrow and return books in the library** written in Python.  
 It allows managing books, members, and borrow/return transactions, storing data in binary files (`.dat`).
 
 ---
